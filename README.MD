@@ -1,4 +1,4 @@
-# Ujian subsumatif
+# Tugas UAS Pemrograman Dasar
 
 **Tema program:** "Aplikasi converter all in one"
 
