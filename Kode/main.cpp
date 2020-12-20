@@ -25,7 +25,7 @@ TODO:
 #include "octal_converter.hpp" // Fungsi untuk mengkonversi octal ke desimal dan sebaliknya
 
 // Variabel dan konstanta untuk konversi satuan suhu
-const int 
+const double 
 // Titik beku & didih celcius
 tb_c = 0,   
 td_c = 100, 
