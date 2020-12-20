@@ -12,29 +12,58 @@ Program ini memiliki fungsi:
 TODO: 
 1. Konverter heksadesimal ke desimal
 2. Konverter desimal ke heksadesimal 
+3. Konverter oktal ke desimal
+4. Konverter desimal ke oktal
 
 */
+
 #include <iostream>
+// Fungsi dari file lain
+#include "temp_converter.hpp" // Fungsi untuk mengkonversi temperatur
+
+
+
+// Variabel dan konstanta untuk konversi satuan suhu
+const int 
+// Titik beku & didih celcius
+tb_c = 0,   
+td_c = 100, 
+// Titik beku & didih fahrenheit
+tb_f = 32, 
+td_f = 212, 
+// Titik beku & didih reamur
+tb_r = 0, 
+td_r = 80, 
+// Titik beku & didih Kelvin
+tb_k = 273, 
+td_k = 373;
+
+int menu;
+int menu_suhu;
+double input_suhu;
+
+// Variabel untuk konversi satuan panjang
+int menu_panjang;
+double input_panjang;
+
+// Variabel untuk konversi biner ke desimal
+long biner;
+long x = 1;
+long hasil_biner = 0;
+
+// Variabel untuk konversi desimal ke biner
+long desimal;
+long hasil_desimal[1000];
+
+// Variabel untuk konversi heksadesimal ke desimal dan sebaliknya
+long heksa
+
+// Variabel untuk konversi heksadesimal ke desimal dan sebaliknya
+
 main()
 {
-    // Variabel untuk konversi satuan suhu
-    int menu;
-    int menu_suhu;
-    double input_suhu;
 
-    // Variabel untuk konversi satuan panjang
-    int menu_panjang;
-    double input_panjang;
-
-    // Variabel untuk konversi biner ke desimal
-    long biner;
-    long x = 1;
-    long hasil_biner = 0;
-
-    // Variabel untuk konversi desimal ke biner
-    long desimal;
-    long hasil_desimal[1000];
-
+    // Menu utama
     std::cout << "\n*****************************************************";
     std::cout << "\n** Selamat datang di Aplikasi converter all in one **";
     std::cout << "\n*****************************************************";
@@ -43,6 +72,12 @@ main()
     std::cout << "\n2. Konverter satuan panjang";
     std::cout << "\n3. Konversi biner ke desimal";
     std::cout << "\n4. Konversi desimal ke biner\n>> ";
+    std::cout << "\n5. Konversi heksadesimal ke desimal\n";
+    std::cout << "\n6. Konversi desimal ke heksadesimal\n";
+    std::cout << "\n7. Konversi oktal ke desimal\n";
+    std::cout << "\n8. Konversi desimal ke oktal\n";
+    
+
     std::cin >> menu;
     switch (menu)
     {
@@ -51,30 +86,42 @@ main()
         std::cout << "\nPilih menu: ";
         std::cout << "\n1. celcius -> fahrenheit";
         std::cout << "\n2. fahrenheit -> celcius";
-        std::cout << "\n3. kelvin -> celcius";
-        std::cout << "\n4. celcius -> kelvin\n>> ";
+        std::cout << "\n3. celcius -> reamur";
+        std::cout << "\n4. reamur -> celcius";
+        std::cout << "\n5. kelvin -> celcius";
+        std::cout << "\n6. celcius -> kelvin\n>> ";
         std::cin >> menu_suhu;
         switch (menu_suhu)
         {
         case 1: // Konversi celcius -> fahrenheit
             std::cout << "\nMasukkan angka: \n>> ";
             std::cin >> input_suhu;
-            std::cout << "\nHasilnya adalah " << (input_suhu * 9 / 5) + 32 << " derajat fahrenheit.";
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_c, td_c, tb_f, td_f) << " derajat fahrenheit.";
             break;
         case 2: // Konversi fahrenheit -> celcius
             std::cout << "\nMasukkan angka: \n>> ";
             std::cin >> input_suhu;
-            std::cout << "\nHasilnya adalah " << (input_suhu - 32) * 5 / 9 << " derajat fahrenheit.";
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_f, td_f, tb_c, td_c) << " derajat celcius.";
             break;
-        case 3: // Konversi kelvin -> celcius
+        case 3: // Konversi celcius -> reamur
             std::cout << "\nMasukkan angka: \n>> ";
             std::cin >> input_suhu;
-            std::cout << "\nHasilnya adalah " << input_suhu - 273 << " derajat fahrenheit.";
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_f, td_f, tb_c, td_c) << " derajat celcius.";
             break;
-        case 4: // Konversi celcius -> kelvin
+        case 4: // Konversi reamur -> celcius
             std::cout << "\nMasukkan angka: \n>> ";
             std::cin >> input_suhu;
-            std::cout << "\nHasilnya adalah " << input_suhu + 273 << " derajat fahrenheit.";
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_f, td_f, tb_c, td_c) << " derajat celcius.";
+            break;
+        case 5: // Konversi kelvin -> celcius
+            std::cout << "\nMasukkan angka: \n>> ";
+            std::cin >> input_suhu;
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_k, td_k, tb_c, td_c) << " derajat celcius.";
+            break;
+        case 6: // Konversi celcius -> kelvin
+            std::cout << "\nMasukkan angka: \n>> ";
+            std::cin >> input_suhu;
+            std::cout << "\nHasilnya adalah " << temp_converter(input_suhu, tb_c, td_c, tb_k, td_k) << " derajat kelvin.";
             break;
         default:
             std::cout << "\nPilih menu dengan benar. Aplikasi akan ditutup.";
@@ -139,6 +186,25 @@ main()
         {
             std::cout << hasil_desimal[j];
         }
+        break;
+    }
+    case 5: // Konversi heksadesimal ke desimal
+    {   
+        int heksa;
+        std::cout << "Masukkan angka heksadecimal";
+        std::cin >> 
+        break;
+    }
+    case 6: // Konversi desimal ke heksadesimal
+    {
+        break;
+    }
+    case 7: // Konversi oktal ke desimal
+    {
+        break;
+    }
+    case 8: // Konversi desimal ke oktal
+    {
         break;
     }
     default:
