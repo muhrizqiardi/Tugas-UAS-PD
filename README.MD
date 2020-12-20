@@ -9,7 +9,7 @@ Program ini memiliki fungsi:
 4. Konverter desimal ke biner
 
 TODO: 
-1. Konverter heksadesimal ke desimal
-2. Konverter desimal ke heksadesimal 
-3. Konverter oktal ke desimal
-4. Konverter desimal ke oktal
+- [x] 1. Konverter heksadesimal ke desimal
+- [x] 2. Konverter desimal ke heksadesimal 
+- [ ] 3. Konverter oktal ke desimal
+- [ ] 4. Konverter desimal ke oktal
