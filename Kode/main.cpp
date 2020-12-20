@@ -18,10 +18,11 @@ TODO:
 */
 
 #include <iostream>
-// Fungsi dari file lain
+
+// Fungsi dari file header lain
 #include "temp_converter.hpp" // Fungsi untuk mengkonversi temperatur
-
-
+#include "hexa_converter.hpp" // Fungsi untuk mengkonversi heksadesimal ke desimal dan sebaliknya
+#include "octal_converter.hpp" // Fungsi untuk mengkonversi octal ke desimal dan sebaliknya
 
 // Variabel dan konstanta untuk konversi satuan suhu
 const int 
@@ -56,9 +57,10 @@ long desimal;
 long hasil_desimal[1000];
 
 // Variabel untuk konversi heksadesimal ke desimal dan sebaliknya
-long heksa
+char heksadesimal[100];
 
 // Variabel untuk konversi heksadesimal ke desimal dan sebaliknya
+long oktal;
 
 main()
 {
@@ -71,11 +73,11 @@ main()
     std::cout << "\n1. Konverter suhu";
     std::cout << "\n2. Konverter satuan panjang";
     std::cout << "\n3. Konversi biner ke desimal";
-    std::cout << "\n4. Konversi desimal ke biner\n>> ";
-    std::cout << "\n5. Konversi heksadesimal ke desimal\n";
-    std::cout << "\n6. Konversi desimal ke heksadesimal\n";
-    std::cout << "\n7. Konversi oktal ke desimal\n";
-    std::cout << "\n8. Konversi desimal ke oktal\n";
+    std::cout << "\n4. Konversi desimal ke biner";
+    std::cout << "\n5. Konversi heksadesimal ke desimal";
+    std::cout << "\n6. Konversi desimal ke heksadesimal";
+    std::cout << "\n7. Konversi oktal ke desimal";
+    std::cout << "\n8. Konversi desimal ke oktal\n>> ";
     
 
     std::cin >> menu;
@@ -190,9 +192,9 @@ main()
     }
     case 5: // Konversi heksadesimal ke desimal
     {   
-        int heksa;
-        std::cout << "Masukkan angka heksadecimal";
-        std::cin >> 
+        std::cout << "Masukkan angka heksadesimal\n>> ";
+        std::cin >> heksadesimal;
+        std::cout << "Hasilnya adalah " << h_ke_d(heksadesimal);
         break;
     }
     case 6: // Konversi desimal ke heksadesimal
