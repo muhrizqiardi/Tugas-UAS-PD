@@ -200,10 +200,9 @@ main()
     case 6: // Konversi desimal ke heksadesimal
     {
         double n;
-        std::cout << "Masukkan angka heksadesimal\n>> ";
+        std::cout << "Masukkan angka desimal\n>> ";
         std::cin >> n;
         std::cout << "Hasilnya adalah " << d_ke_h(n);
-
         break;
     }
     case 7: // Konversi oktal ke desimal
@@ -220,4 +219,5 @@ main()
             break;
         }
     }
+    std::cin.get();
 }
