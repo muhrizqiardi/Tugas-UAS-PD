@@ -1,6 +1,6 @@
 using namespace std;
 
-int temp_converter(int temperatur, int tb_asal, int td_asal, int tb_tujuan, int td_tujuan)
+double temp_converter(double x, double tb_asal, double td_asal, double tb_tujuan, double td_tujuan)
 {
-    return ((temperatur - tb_asal) * (td_asal - tb_asal) / (td_tujuan - tb_tujuan)) - tb_asal;
+    return ((x - tb_asal) * (td_tujuan - tb_tujuan) / (td_asal - tb_asal)) + tb_tujuan;
 }
