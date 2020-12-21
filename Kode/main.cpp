@@ -207,10 +207,19 @@ main()
     }
     case 7: // Konversi oktal ke desimal
     {
+        int n;
+        std::cout << "Masukkan angka oktal\n>> ";
+        std::cin >> n;
+        std::cout << "Hasilnya adalah " << o_ke_d(n);
         break;
     }
     case 8: // Konversi desimal ke oktal
     {
+        int n;
+        std::cout << "Masukkan angka desimal\n>> ";
+        std::cin >> n;
+        std::cout << "Hasilnya adalah " << d_ke_o(n);
+
         break;
     }
     default:
